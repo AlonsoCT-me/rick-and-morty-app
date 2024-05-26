@@ -1,3 +1,117 @@
+
+# React Favorites App
+
+Esta es una aplicación de React que permite a los usuarios agregar personajes y ubicaciones a su lista de favoritos. La aplicación incluye autenticación básica y diferentes páginas para mostrar personajes, ubicaciones y favoritos.
+
+## Características
+
+- Ver una lista de personajes.
+- Ver una lista de ubicaciones.
+- Agregar personajes y ubicaciones a favoritos.
+- Iniciar sesión con credenciales de demostración.
+- Ver y gestionar la lista de favoritos.
+
+## Tecnologías Utilizadas
+
+- React
+- React Router
+- Context API
+- SCSS para estilos
+- Bootstrap para diseño y estilos adicionales
+
+## Instalación
+
+1. Clona el repositorio:
+
+    ```bash
+    git clone https://github.com/tu-usuario/react-favorites-app.git
+    cd react-favorites-app
+    ```
+
+2. Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+3. Inicia la aplicación:
+
+    ```bash
+    npm start
+    npm run build
+    ```
+
+    La aplicación estará disponible en `http://localhost:3000`.
+
+## Uso
+
+### Navegación
+
+La aplicación incluye un menú de navegación que permite acceder a diferentes páginas:
+
+- **Inicio**: Muestra una lista de personajes.
+- **Ubicaciones**: Muestra una lista de ubicaciones.
+- **Favoritos**: Muestra la lista de elementos favoritos (disponible solo después de iniciar sesión).
+- **Inicio de sesión**: Permite al usuario iniciar sesión.
+
+### Inicio de Sesión
+
+Para iniciar sesión, sigue estos pasos:
+
+1. Haz clic en el enlace "Inicio de sesión" en el menú de navegación.
+2. Ingresa las credenciales de demostración:
+
+    ```plaintext
+    Usuario: demo
+    Contraseña: demo
+    ```
+
+3. Haz clic en "Iniciar sesión".
+
+### Agregar a Favoritos
+
+Puedes agregar personajes y ubicaciones a tus favoritos de la siguiente manera:
+
+1. Navega a la página de personajes o ubicaciones.
+2. Haz clic en el botón "Agregar a favoritos" en la tarjeta del personaje o ubicación que deseas agregar.
+
+### Ver y Gestionar Favoritos
+
+Para ver y gestionar tus favoritos:
+
+1. Inicia sesión con las credenciales de demostración.
+2. Navega a la página "Favoritos" desde el menú de navegación.
+3. En la página de favoritos, verás una lista de tus personajes y ubicaciones favoritos.
+4. Puedes eliminar un favorito haciendo clic en el botón "Eliminar" en la tarjeta correspondiente.
+
+## Estructura del Proyecto
+
+```plaintext
+src/
+├── components/
+│   ├── AuthStatus.tsx
+│   ├── CharacterCard.tsx
+│   ├── LocationCard.tsx
+│   ├── LoginForm.tsx
+│   └── NavigationMenu.tsx
+├── contexts/
+│   ├── AuthContext.tsx
+│   ├── CharactersContext.tsx
+│   ├── FavoritesContext.tsx
+│   └── LocationsContext.tsx
+├── pages/
+│   ├── Favorites.tsx
+│   ├── Home.tsx
+│   ├── Locations.tsx
+│   └── Login.tsx
+├── styles/
+│   ├── AuthStatus.module.scss
+│   ├── CharacterCard.module.scss
+│   ├── global.scss
+│   └── LocationCard.module.scss
+├── App.tsx
+└── index.tsx
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

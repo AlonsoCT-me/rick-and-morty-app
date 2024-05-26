@@ -23,7 +23,6 @@ const LocationCard: React.FC<{ location: Location }> = ({ location }) => {
         <h5 className={`card-title ${styles['card-title']}`}>{location.name}</h5>
         {!isFavorite && <button className={`btn btn-primary ${styles.btn}`} onClick={handleAddFavorite}>Agregar a favoritos</button>}
         {isFavorite && <button disabled>Ya en favoritos</button>}
-
       </div>
     </div>
   );
