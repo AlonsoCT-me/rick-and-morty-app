@@ -42,6 +42,7 @@ Esta es una aplicación de React que permite a los usuarios agregar personajes y
     ```
 
     La aplicación estará disponible en `http://localhost:3000`.
+    Y públicamente en: https://challenge-rick-morty-alonsoct.netlify.app/
 
 ## Uso
 
