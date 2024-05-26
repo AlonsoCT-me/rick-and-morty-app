@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFavorites } from '../contexts/FavoritesContext';
+import styles from '../styles/CharacterCard.module.scss';
 
 interface Character {
   id: number;
@@ -15,10 +16,12 @@ const CharacterCard: React.FC<{ character: Character }> = ({ character }) => {
   };
 
   return (
-    <div>
-      <img src={character.image} alt={character.name} />
-      <h2>{character.name}</h2>
-      <button onClick={handleAddFavorite}>Agregar a favoritos</button>
+    <div className={`card ${styles.card}`} style={{ width: '18rem' }}>
+      <img src={character.image} className={`card-img-top ${styles['card-img-top']}`} alt={character.name} />
+      <div className={`card-body ${styles['card-body']}`}>
+        <h5 className={`card-title ${styles['card-title']}`}>{character.name}</h5>
+        <button className={`btn btn-primary ${styles.btn}`} onClick={handleAddFavorite}>Agregar a favoritos</button>
+      </div>
     </div>
   );
 };

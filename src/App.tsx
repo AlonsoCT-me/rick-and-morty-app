@@ -10,6 +10,8 @@ import { CharactersProvider } from './contexts/CharactersContext';
 import { LocationsProvider } from './contexts/LocationsContext';
 import { FavoritesProvider } from './contexts/FavoritesContext';
 
+import './styles/global.scss';
+
 const App: React.FC = () => {
   return (
     <Router>

@@ -1,20 +1,30 @@
-import React, { useContext } from 'react';
-import AuthContext from '../contexts/AuthContext';
+import React, { useState } from 'react';
+import LoginForm from '../components/LoginForm';
+import { useAuth } from '../contexts/AuthContext';
 
 const Login: React.FC = () => {
-  const { isAuthenticated, login, logout } = useContext(AuthContext)!;
+  const { login } = useAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    login(); // Aquí podrías implementar la lógica de autenticación real si lo deseas
+  };
+
+  if (isLoggedIn) {
+    return (
+      <div className="container">
+        <p className="mt-5">¡Ya estás conectado!</p>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <h1>{isAuthenticated ? 'Bienvenido' : 'Por favor, inicie sesión'}</h1>
-      {isAuthenticated ? (
-        <button onClick={logout}>Cerrar sesión</button>
-      ) : (
-        <button onClick={login}>Iniciar sesión</button>
-      )}
+    <div className="container">
+      <h2 className="mt-5">Iniciar sesión</h2>
+      <LoginForm onLogin={handleLogin} />
     </div>
   );
 };
 
 export default Login;
-
