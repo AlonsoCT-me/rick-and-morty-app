@@ -8,7 +8,10 @@ interface Location {
 }
 
 const LocationCard: React.FC<{ location: Location }> = ({ location }) => {
-  const { addFavorite } = useFavorites()!;
+  const { addFavorite, favorites } = useFavorites()!;
+
+  const isFavorite = favorites.some(favorite => favorite.id === location.id && favorite.type === 'location');
+
 
   const handleAddFavorite = () => {
     addFavorite({ id: location.id, type: 'location', data: location });
@@ -18,7 +21,9 @@ const LocationCard: React.FC<{ location: Location }> = ({ location }) => {
     <div className={`card ${styles.card}`} style={{ width: '18rem' }}>
       <div className="card-body">
         <h5 className={`card-title ${styles['card-title']}`}>{location.name}</h5>
-        <button className={`btn btn-primary ${styles.btn}`} onClick={handleAddFavorite}>Agregar a favoritos</button>
+        {!isFavorite && <button className={`btn btn-primary ${styles.btn}`} onClick={handleAddFavorite}>Agregar a favoritos</button>}
+        {isFavorite && <button disabled>Ya en favoritos</button>}
+
       </div>
     </div>
   );
